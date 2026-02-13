@@ -1,0 +1,187 @@
+{
+  "meta": {
+    "email": "you@email.com",
+    "phone": "+30 000 000 0000",
+    "city": "Αθήνα, Ελλάδα",
+    "linkedin": "https://www.linkedin.com/in/konstantinos-tsouflias/"
+  },
+  "name": "Κωνσταντίνος Τσούφλιας",
+  "headline": "Είμαι ο Κωνσταντίνος,",
+  "subheadline": "Web Developer",
+  "nav": {
+    "skills": "Δεξιότητες",
+    "education": "Σπουδές",
+    "experience": "Εμπειρία",
+    "languages": "Γλώσσες",
+    "projects": "Projects"
+  },
+  "skills": [
+    {
+      "name": "React.js",
+      "level": 78
+    },
+    {
+      "name": "JavaScript",
+      "level": 82
+    },
+    {
+      "name": "HTML / HTML5",
+      "level": 88
+    },
+    {
+      "name": "CSS",
+      "level": 84
+    },
+    {
+      "name": "WordPress",
+      "level": 86
+    },
+    {
+      "name": "WooCommerce",
+      "level": 78
+    },
+    {
+      "name": "SEO",
+      "level": 62
+    },
+    {
+      "name": "Plesk / cPanel",
+      "level": 66
+    }
+  ],
+  "languages": [
+    {
+      "name": "Ελληνικά",
+      "level": "Μητρική",
+      "pct": 100
+    },
+    {
+      "name": "Αγγλικά",
+      "level": "Επαγγελματική",
+      "pct": 85
+    }
+  ],
+  "education": [
+    {
+      "title": "Μεταπτυχιακές Σπουδές",
+      "subtitle": "Πανεπιστήμιο Αιγαίου — Cultural Informatics & Communication",
+      "period": "2011 — 2012"
+    },
+    {
+      "title": "Nanodegree",
+      "subtitle": "Udacity — Front End Web Developer",
+      "period": "Φεβ 2020 — Αύγ 2020"
+    },
+    {
+      "title": "Πτυχίο",
+      "subtitle": "Πανεπιστήμιο Αιγαίου — Audiovisual Communication",
+      "period": "2006 — 2011"
+    }
+  ],
+  "experience": [
+    {
+      "role": "Web Developer",
+      "company": "Prime Products",
+      "period": "Ιαν 2025 — Σήμερα",
+      "tags": [
+        "Frontend",
+        "WP",
+        "UI"
+      ],
+      "bullets": []
+    },
+    {
+      "role": "Web Developer",
+      "company": "Global Touch (Full-time)",
+      "period": "Ιουλ 2024 — Δεκ 2024",
+      "tags": [
+        "Web",
+        "Frontend"
+      ],
+      "bullets": []
+    },
+    {
+      "role": "Web Developer",
+      "company": "Greek Yellow Pages",
+      "period": "Μάι 2023 — Ιουλ 2024",
+      "tags": [
+        "Frontend",
+        "CMS"
+      ],
+      "bullets": []
+    },
+    {
+      "role": "Implementation Coordinator",
+      "company": "Greek Yellow Pages",
+      "period": "Ιουν 2019 — Μάι 2023",
+      "tags": [
+        "Υλοποίηση",
+        "Συντονισμός"
+      ],
+      "bullets": []
+    },
+    {
+      "role": "Multimedia Developer",
+      "company": "Express Publishing",
+      "period": "Μάι 2016 — Ιουν 2019",
+      "tags": [
+        "Multimedia",
+        "Digital"
+      ],
+      "bullets": []
+    },
+    {
+      "role": "Web Designer",
+      "company": "ASTBooks",
+      "period": "Οκτ 2013 — Απρ 2016",
+      "tags": [
+        "Design",
+        "Web"
+      ],
+      "bullets": [
+        "Δημιουργία και σχεδιασμός εταιρικών websites (και e-shop).",
+        "Διόρθωση & σελιδοποίηση έντυπου υλικού και ebooks.",
+        "Δημιουργία brochures και διαχείριση social media."
+      ]
+    },
+    {
+      "role": "Broadcast Designer",
+      "company": "TV Mytilini",
+      "period": "Ιουλ 2008 — Αύγ 2008",
+      "tags": [
+        "Training"
+      ],
+      "bullets": [
+        "Graduate training: video cutting, προετοιμασία προγραμμάτων, έλεγχος live εκπομπών."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Interactive CV",
+      "desc": "Creative/modern CV με drag & drop sections, δίγλωσσο περιεχόμενο και PDF export.",
+      "tags": [
+        "React",
+        "Tailwind",
+        "Framer Motion"
+      ]
+    },
+    {
+      "name": "Intranet Workflows",
+      "desc": "Εσωτερικά εργαλεία με φόρμες, εγκρίσεις και dashboards (WordPress).",
+      "tags": [
+        "WordPress",
+        "Automation"
+      ]
+    }
+  ],
+  "actions": {
+    "editMode": "Επεξεργασία διάταξης",
+    "done": "Τέλος",
+    "downloadPdf": "Λήψη PDF",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "langEN": "EN",
+    "langEL": "GR"
+  }
+}
