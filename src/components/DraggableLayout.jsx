@@ -1,5 +1,10 @@
 import { DndContext, closestCenter } from "@dnd-kit/core";
-import { SortableContext, verticalListSortingStrategy, arrayMove, useSortable } from "@dnd-kit/sortable";
+import {
+  SortableContext,
+  verticalListSortingStrategy,
+  arrayMove,
+  useSortable,
+} from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import SectionCard from "./SectionCard";
 import SkillBars from "./SkillBars";
@@ -8,20 +13,43 @@ import ExperienceGrid from "./ExperienceGrid";
 import LanguagesRings from "./LanguagesRings";
 import Projects from "./Projects";
 import { useTranslation } from "react-i18next";
+import MotionSection from "./MotionSection";
 
-const DEFAULT_ORDER = ["skills","education","experience","languages","projects"];
+const DEFAULT_ORDER = ["skills", "education", "experience", "languages", "projects"];
 
-export function getDefaultOrder(){ return DEFAULT_ORDER; }
+export function getDefaultOrder() {
+  return DEFAULT_ORDER;
+}
 
-export default function DraggableLayout({ order, setOrder, editMode }){
+export default function DraggableLayout({ order, setOrder, editMode }) {
   const { t } = useTranslation();
 
   const cards = {
-    skills: <SectionCard title={t("nav.skills")}><SkillBars /></SectionCard>,
-    education: <SectionCard title={t("nav.education")}><Degrees /></SectionCard>,
-    experience: <SectionCard title={t("nav.experience")}><ExperienceGrid /></SectionCard>,
-    languages: <SectionCard title={t("nav.languages")}><LanguagesRings /></SectionCard>,
-    projects: <SectionCard title={t("nav.projects")}><Projects /></SectionCard>,
+    skills: (
+      <SectionCard title={t("nav.skills")}>
+        <SkillBars />
+      </SectionCard>
+    ),
+    education: (
+      <SectionCard title={t("nav.education")}>
+        <Degrees />
+      </SectionCard>
+    ),
+    experience: (
+      <SectionCard title={t("nav.experience")}>
+        <ExperienceGrid />
+      </SectionCard>
+    ),
+    languages: (
+      <SectionCard title={t("nav.languages")}>
+        <LanguagesRings />
+      </SectionCard>
+    ),
+    projects: (
+      <SectionCard title={t("nav.projects")}>
+        <Projects />
+      </SectionCard>
+    ),
   };
 
   const onDragEnd = ({ active, over }) => {
@@ -32,22 +60,51 @@ export default function DraggableLayout({ order, setOrder, editMode }){
     setOrder(arrayMove(order, oldIndex, newIndex));
   };
 
+  // Stagger delays (feel free to tweak)
+  const delays = {
+    skills: 0.05,
+    education: 0.10,
+    projects: 0.12,
+    experience: 0.16,
+    languages: 0.20,
+  };
+
+  // Helper: wrap children with MotionSection only when NOT in edit mode
+  const maybeMotion = (id, node) => {
+    if (editMode) return node;
+    return <MotionSection delay={delays[id] ?? 0}>{node}</MotionSection>;
+  };
+
   return (
     <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
       <SortableContext items={order} strategy={verticalListSortingStrategy}>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {/* mimic layout: left column (skills), right top (education), right mid (experience), bottom (languages) */}
+          {/* Left column */}
           <div className="lg:col-span-1 space-y-4">
-            <SortableItem id="skills" editMode={editMode}>{cards.skills}</SortableItem>
+            <SortableItem id="skills" editMode={editMode}>
+              {maybeMotion("skills", cards.skills)}
+            </SortableItem>
           </div>
 
+          {/* Right column */}
           <div className="lg:col-span-2 space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <SortableItem id="education" editMode={editMode}>{cards.education}</SortableItem>
-              <SortableItem id="projects" editMode={editMode}>{cards.projects}</SortableItem>
+              <SortableItem id="education" editMode={editMode}>
+                {maybeMotion("education", cards.education)}
+              </SortableItem>
+
+              <SortableItem id="projects" editMode={editMode}>
+                {maybeMotion("projects", cards.projects)}
+              </SortableItem>
             </div>
-            <SortableItem id="experience" editMode={editMode}>{cards.experience}</SortableItem>
-            <SortableItem id="languages" editMode={editMode}>{cards.languages}</SortableItem>
+
+            <SortableItem id="experience" editMode={editMode}>
+              {maybeMotion("experience", cards.experience)}
+            </SortableItem>
+
+            <SortableItem id="languages" editMode={editMode}>
+              {maybeMotion("languages", cards.languages)}
+            </SortableItem>
           </div>
         </div>
       </SortableContext>
@@ -55,9 +112,15 @@ export default function DraggableLayout({ order, setOrder, editMode }){
   );
 }
 
-function SortableItem({ id, children, editMode }){
-  const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id });
-  const style = { transform: CSS.Transform.toString(transform), transition, opacity: isDragging ? .9 : 1 };
+function SortableItem({ id, children, editMode }) {
+  const { attributes, listeners, setNodeRef, transform, transition, isDragging } =
+    useSortable({ id });
+
+  const style = {
+    transform: CSS.Transform.toString(transform),
+    transition,
+    opacity: isDragging ? 0.9 : 1,
+  };
 
   return (
     <div ref={setNodeRef} style={style} className="relative">
@@ -71,6 +134,7 @@ function SortableItem({ id, children, editMode }){
           Drag
         </button>
       ) : null}
+
       {children}
     </div>
   );

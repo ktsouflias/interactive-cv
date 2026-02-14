@@ -1,12 +1,18 @@
 import { useTranslation } from "react-i18next";
 import { IconMail, IconPhone, IconPin, IconLink } from "./Icon";
+import { motion } from "framer-motion";
 
-export default function TopHero(){
+export default function TopHero() {
   const { t } = useTranslation();
   const meta = t("meta", { returnObjects: true });
 
   return (
-    <div className="rounded-3xl bg-[linear-gradient(135deg,var(--brand),var(--brand2))] text-white shadow-card">
+    <motion.div
+      initial={{ opacity: 0, y: -12, scale: 0.99 }}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="rounded-3xl bg-[linear-gradient(135deg,var(--brand),var(--brand2))] text-white shadow-card"
+    >
       <div className="p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
         <div className="flex items-center gap-5">
           <div className="relative">
@@ -25,7 +31,9 @@ export default function TopHero(){
             <div className="text-3xl md:text-4xl font-extrabold tracking-tight">
               {t("headline")} <span className="opacity-95">{t("subheadline")}</span>
             </div>
-            <div className="mt-2 opacity-90 text-sm md:text-base font-medium">{t("name")}</div>
+            <div className="mt-2 opacity-90 text-sm md:text-base font-medium">
+              {t("name")}
+            </div>
           </div>
         </div>
 
@@ -40,11 +48,11 @@ export default function TopHero(){
           </a>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
-function MetaChip({ icon, text, clickable }){
+function MetaChip({ icon, text, clickable }) {
   return (
     <div className="flex items-center gap-2 rounded-2xl bg-white/18 border border-white/25 px-3 py-2 backdrop-blur">
       <div className="shrink-0">{icon}</div>
