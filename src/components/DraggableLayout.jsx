@@ -76,40 +76,56 @@ export default function DraggableLayout({ order, setOrder, editMode }) {
   };
 
   return (
-    <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
-      <SortableContext items={order} strategy={verticalListSortingStrategy}>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          {/* Left column */}
-          <div className="lg:col-span-1 space-y-4">
+  <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
+    <SortableContext items={order} strategy={verticalListSortingStrategy}>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+        {/* LEFT COLUMN */}
+        <div className="lg:col-span-1 space-y-4">
+          <MotionSection delay={0.1}>
             <SortableItem id="skills" editMode={editMode}>
-              {maybeMotion("skills", cards.skills)}
+              {cards.skills}
             </SortableItem>
-          </div>
-
-          {/* Right column */}
-          <div className="lg:col-span-2 space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <SortableItem id="education" editMode={editMode}>
-                {maybeMotion("education", cards.education)}
-              </SortableItem>
-
-              <SortableItem id="projects" editMode={editMode}>
-                {maybeMotion("projects", cards.projects)}
-              </SortableItem>
-            </div>
-
-            <SortableItem id="experience" editMode={editMode}>
-              {maybeMotion("experience", cards.experience)}
-            </SortableItem>
-
-            <SortableItem id="languages" editMode={editMode}>
-              {maybeMotion("languages", cards.languages)}
-            </SortableItem>
-          </div>
+          </MotionSection>
         </div>
-      </SortableContext>
-    </DndContext>
-  );
+
+        {/* RIGHT COLUMN */}
+        <div className="lg:col-span-2 space-y-4">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <MotionSection delay={0.2}>
+              <SortableItem id="education" editMode={editMode}>
+                {cards.education}
+              </SortableItem>
+            </MotionSection>
+
+            <MotionSection delay={0.3}>
+              <SortableItem id="projects" editMode={editMode}>
+                {cards.projects}
+              </SortableItem>
+            </MotionSection>
+
+          </div>
+
+          <MotionSection delay={0.4}>
+            <SortableItem id="experience" editMode={editMode}>
+              {cards.experience}
+            </SortableItem>
+          </MotionSection>
+
+          <MotionSection delay={0.5}>
+            <SortableItem id="languages" editMode={editMode}>
+              {cards.languages}
+            </SortableItem>
+          </MotionSection>
+
+        </div>
+      </div>
+    </SortableContext>
+  </DndContext>
+);
+
 }
 
 function SortableItem({ id, children, editMode }) {
