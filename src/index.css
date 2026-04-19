@@ -5,23 +5,27 @@
 :root{
   --bg: #f6f7fb;
   --panel: rgba(255,255,255,.92);
+  --toolbar: rgba(246,247,251,.72);
   --ink: #0f172a;
   --muted: rgba(15,23,42,.65);
   --line: rgba(15,23,42,.08);
   --brand: #7b84d6; /* lavender */
   --brand2: #9aa2ff;
   --chip: rgba(123,132,214,.10);
+  --selection: rgba(123,132,214,.25);
 }
 
 :root[data-theme="dark"]{
   --bg: #0b1020;
   --panel: rgba(255,255,255,.06);
+  --toolbar: rgba(11,16,32,.72);
   --ink: rgba(255,255,255,.92);
   --muted: rgba(255,255,255,.65);
   --line: rgba(255,255,255,.10);
   --brand: #7b84d6;
   --brand2: #9aa2ff;
   --chip: rgba(123,132,214,.18);
+  --selection: rgba(123,132,214,.25);
 }
 
 html, body { height: 100%; }
@@ -32,13 +36,364 @@ body{
   color: var(--ink);
 }
 
-::selection{ background: rgba(123,132,214,.25); }
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+select {
+  color: inherit;
+}
+
+::selection{ background: var(--selection); }
 
 @media print{
   body{ background:#fff; }
 }
 
+.cv-page {
+  position: relative;
+}
+
+.cv-export-root {
+  width: 794px;
+}
+
+.cv-export-page {
+  width: 794px;
+  padding: 18px;
+  background: var(--bg);
+}
+
+.cv-export-page .cv-breadcrumb {
+  margin-bottom: -2px;
+}
+
+.cv-export-page .cv-hero-shell {
+  border-radius: 24px;
+}
+
+.cv-export-page .cv-hero-shell > div {
+  gap: 1.25rem;
+  padding: 1.1rem 1.25rem;
+}
+
+.cv-export-page .cv-hero-shell .h-28.w-28 {
+  height: 5.25rem;
+  width: 5.25rem;
+}
+
+.cv-export-page .cv-hero-shell .h-10.w-10 {
+  height: 2rem;
+  width: 2rem;
+}
+
+.cv-export-page .cv-hero-shell .text-3xl,
+.cv-export-page .cv-hero-shell .md\:text-4xl {
+  font-size: 1.1rem;
+  line-height: 1.15;
+}
+
+.cv-export-page .cv-hero-shell .text-sm,
+.cv-export-page .cv-hero-shell .md\:text-base {
+  font-size: 0.78rem;
+}
+
+.cv-export-page .cv-hero-shell .min-h-\[60px\] {
+  min-height: 48px;
+}
+
+.cv-export-page .cv-hero-shell .rounded-2xl {
+  border-radius: 18px;
+}
+
+.cv-export-page .cv-hero-shell .px-4 {
+  padding-left: 0.85rem;
+  padding-right: 0.85rem;
+}
+
+.cv-export-page .cv-hero-shell .py-3 {
+  padding-top: 0.65rem;
+  padding-bottom: 0.65rem;
+}
+
+.cv-export-page .cv-hero-shell .text-sm.font-medium {
+  font-size: 0.78rem;
+  line-height: 1.2;
+}
+
+.cv-export-page .cv-section-card {
+  border-radius: 24px;
+}
+
+.cv-export-page .cv-section-card > div {
+  padding: 1rem;
+}
+
+.cv-export-page .cv-section-card .mb-4 {
+  margin-bottom: 0.75rem;
+}
+
+.cv-export-page .cv-section-card .text-xs {
+  font-size: 0.64rem;
+}
+
+.cv-export-page .cv-section-card .text-sm {
+  font-size: 0.82rem;
+}
+
+.cv-export-page .cv-section-card .text-\[11px\] {
+  font-size: 0.62rem;
+}
+
+.cv-export-page .cv-section-card .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+  margin-top: 0.55rem;
+}
+
+.cv-export-page .cv-section-card .gap-3 {
+  gap: 0.65rem;
+}
+
+.cv-export-page .cv-section-card .gap-2 {
+  gap: 0.45rem;
+}
+
+.cv-export-page .skills-grid {
+  gap: 0.45rem;
+}
+
+.cv-export-page .skill-entry {
+  gap: 0.3rem;
+}
+
+.cv-export-page .skill-entry .h-2 {
+  height: 0.42rem;
+}
+
+.cv-export-page .languages-grid {
+  gap: 0.55rem;
+}
+
+.cv-export-page .languages-grid-list {
+  gap: 0.9rem;
+}
+
+.cv-export-page .language-entry {
+  min-width: 82px;
+  gap: 0.15rem;
+}
+
+.cv-export-page .language-entry svg {
+  width: 54px;
+  height: 54px;
+}
+
+.cv-export-page .language-entry text {
+  font-size: 11px;
+}
+
+.cv-export-page .projects-grid,
+.cv-export-page .degrees-grid,
+.cv-export-page .experience-grid {
+  gap: 0.55rem;
+}
+
+.cv-export-page .projects-grid-list,
+.cv-export-page .degrees-grid-list,
+.cv-export-page .experience-grid-list {
+  gap: 0.6rem;
+}
+
+.cv-export-page .cv-layout-grid {
+  grid-template-columns: minmax(0, 0.64fr) minmax(0, 1.36fr);
+}
+
+.cv-export-page .project-entry,
+.cv-export-page .degree-entry,
+.cv-export-page .experience-entry {
+  padding: 0.75rem;
+}
+
+.cv-export-page .project-entry .mt-3,
+.cv-export-page .project-entry .mt-4,
+.cv-export-page .degree-entry .mt-1,
+.cv-export-page .degree-entry .mt-2,
+.cv-export-page .experience-entry .mt-1,
+.cv-export-page .experience-entry .mt-3 {
+  margin-top: 0.35rem;
+}
+
+.cv-export-page .project-entry .leading-relaxed,
+.cv-export-page .experience-entry .space-y-1 {
+  line-height: 1.35;
+}
+
+.cv-export-page .experience-entry .justify-between {
+  align-items: flex-start;
+}
+
+.cv-export-page .experience-entry .experience-period {
+  white-space: normal;
+  text-align: right;
+  line-height: 1.1;
+  font-size: 0.56rem;
+  max-width: 72px;
+  flex-shrink: 0;
+  overflow-wrap: anywhere;
+}
+
+.cv-export-page .experience-entry ul {
+  margin-top: 0.35rem;
+  padding-left: 1rem;
+}
+
+.cv-export-page .experience-entry li {
+  margin-top: 0.1rem;
+}
+
+.cv-export-page .cv-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 16px;
+  line-height: 1;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  vertical-align: middle;
+}
+
+.cv-export-page .cv-footer {
+  padding-top: 0.5rem;
+}
+
+.cv-template-modern .cv-hero-shell {
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.14);
+}
+
+.cv-template-classic .cv-hero-shell {
+  border-radius: 10px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 36%, #243447), color-mix(in srgb, var(--brand2) 28%, #111827));
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.1);
+  border: 1px solid color-mix(in srgb, var(--ink) 10%, transparent);
+}
+
+.cv-template-classic .cv-section-card {
+  border-radius: 6px;
+  box-shadow: none;
+  border-width: 1px;
+  background: color-mix(in srgb, var(--panel) 94%, white);
+}
+
+.cv-template-classic .cv-page,
+.cv-template-classic .cv-page input,
+.cv-template-classic .cv-page textarea,
+.cv-template-classic .cv-page select,
+.cv-template-classic .cv-page button {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.cv-template-classic .cv-breadcrumb,
+.cv-template-classic .cv-footer,
+.cv-template-classic .cv-section-card .tracking-\[\.18em\] {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
+
+.cv-template-classic .cv-breadcrumb,
+.cv-template-classic .cv-footer {
+  letter-spacing: 0.03em;
+}
+
+.cv-template-classic .cv-section-card > div,
+.cv-template-classic .cv-hero-shell > div {
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+}
+
+.cv-template-classic .cv-section-card > div {
+  padding-left: 1.2rem;
+  padding-right: 1.2rem;
+}
+
+.cv-template-classic .cv-hero-shell .rounded-full,
+.cv-template-classic .cv-hero-shell .rounded-2xl,
+.cv-template-classic .cv-hero-shell .rounded-xl {
+  border-radius: 10px;
+}
+
+.cv-template-classic .cv-hero-shell .bg-white\/16,
+.cv-template-classic .cv-hero-shell .bg-white\/18 {
+  background: rgba(255,255,255,.1);
+}
+
+.cv-template-classic .cv-hero-shell .backdrop-blur {
+  backdrop-filter: none;
+}
+
+.cv-template-classic .cv-section-card .text-sm.font-extrabold,
+.cv-template-classic .cv-section-card .font-extrabold,
+.cv-template-classic .cv-hero-shell .font-extrabold {
+  letter-spacing: 0.01em;
+}
+
+.cv-template-compact {
+  --chip: color-mix(in srgb, var(--brand) 10%, transparent);
+}
+
+.cv-template-compact .cv-hero-shell {
+  border-radius: 24px;
+}
+
+.cv-template-compact .cv-section-card {
+  border-radius: 24px;
+}
+
+.cv-template-compact .cv-breadcrumb {
+  margin-bottom: -4px;
+}
+
+.cv-template-compact .cv-footer {
+  padding-top: 10px;
+}
+
+.cv-template-compact .cv-page,
+.cv-template-compact.cv-page {
+  gap: 12px;
+}
+
+.cv-template-compact .cv-section-card > div,
+.cv-template-compact .cv-hero-shell > div {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.cv-template-compact .cv-section-card > div {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.cv-template-compact .cv-hero-shell > div {
+  gap: 1.25rem;
+}
+
 /* Smooth theme transitions */
 * {
   transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+
+@media (max-width: 768px){
+  .shadow-soft {
+    box-shadow: 0 8px 28px rgba(15, 23, 42, 0.08);
+  }
+
+  .cv-template-compact .cv-section-card > div,
+  .cv-template-compact .cv-hero-shell > div {
+    padding: 0.9rem;
+  }
+
+  .cv-breadcrumb {
+    padding-right: 0;
+  }
 }

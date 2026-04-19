@@ -1,13 +1,14 @@
 {
   "meta": {
-    "email": "you@email.com",
-    "phone": "+30 000 000 0000",
-    "city": "Αθήνα, Ελλάδα",
+    "email": "tsouflias.konstantinos@gmail.com",
+    "phone": "+30 6983614910",
+    "city": "Athens, Greece",
     "linkedin": "https://www.linkedin.com/in/konstantinos-tsouflias/"
   },
-  "name": "Κωνσταντίνος Τσουφλιάς",
+  "name": "Konstantinos Tsouflias",
   "headline": "Είμαι ο Κωνσταντίνος,",
   "subheadline": "Web Developer",
+  "summary": "Web developer με έμφαση στο front-end και πρακτική εμπειρία σε React, WordPress, WooCommerce, υλοποίηση UI και digital workflows. Άνεση σε σύγχρονα websites, εσωτερικά εργαλεία και content-driven πλατφόρμες.",
   "nav": {
     "skills": "Δεξιότητες",
     "education": "Σπουδές",
@@ -16,163 +17,103 @@
     "projects": "Projects"
   },
   "skills": [
-    {
-      "name": "React.js",
-      "level": 78
-    },
-    {
-      "name": "JavaScript",
-      "level": 82
-    },
-    {
-      "name": "HTML / HTML5",
-      "level": 88
-    },
-    {
-      "name": "CSS",
-      "level": 84
-    },
-    {
-      "name": "WordPress",
-      "level": 86
-    },
-    {
-      "name": "WooCommerce",
-      "level": 78
-    },
-    {
-      "name": "SEO",
-      "level": 62
-    },
-    {
-      "name": "Plesk / cPanel",
-      "level": 66
-    }
+    { "name": "React.js", "level": 78 },
+    { "name": "JavaScript", "level": 82 },
+    { "name": "HTML / HTML5", "level": 88 },
+    { "name": "CSS", "level": 84 },
+    { "name": "WordPress", "level": 86 },
+    { "name": "WooCommerce", "level": 78 },
+    { "name": "SEO", "level": 62 },
+    { "name": "Plesk / cPanel", "level": 66 }
   ],
   "languages": [
-    {
-      "name": "Ελληνικά",
-      "level": "Μητρική",
-      "pct": 100
-    },
-    {
-      "name": "Αγγλικά",
-      "level": "Επαγγελματική",
-      "pct": 85
-    }
+    { "name": "Ελληνικά", "level": "Μητρική", "pct": 100 },
+    { "name": "Αγγλικά", "level": "Επαγγελματική", "pct": 85 }
   ],
   "education": [
     {
       "title": "Μεταπτυχιακές Σπουδές",
-      "subtitle": "Πανεπιστήμιο Αιγαίου — Σχεδιασμός ψηφιακών πολιτιστικών προϊόντων",
-      "period": "2011 — 2012"
+      "subtitle": "Πανεπιστήμιο Αιγαίου - Cultural Informatics & Communication",
+      "period": "2011 - 2012"
     },
     {
       "title": "Nanodegree",
-      "subtitle": "Udacity — Front End Web Developer",
-      "period": "Φεβ 2020 — Αύγ 2020"
+      "subtitle": "Udacity - Front End Web Developer",
+      "period": "Φεβ 2020 - Αυγ 2020"
     },
     {
       "title": "Πτυχίο",
-      "subtitle": "Πανεπιστήμιο Αιγαίου — Τμήμα Πολιτισμικής Τεχνολογίας & Επικοινωνίας",
-      "period": "2006 — 2011"
+      "subtitle": "Πανεπιστήμιο Αιγαίου - Audiovisual Communication",
+      "period": "2006 - 2011"
     }
   ],
   "experience": [
     {
       "role": "Web Developer",
       "company": "Prime Products",
-      "period": "Ιαν 2025 — Σήμερα",
-      "tags": [
-        "Frontend",
-        "WP",
-        "UI"
-      ],
+      "period": "Ιαν 2025 - Σήμερα",
+      "tags": ["Frontend", "WP Ecosystem", "UI"],
       "bullets": []
     },
     {
       "role": "Web Developer",
       "company": "Global Touch (Full-time)",
-      "period": "Ιουλ 2024 — Δεκ 2024",
-      "tags": [
-        "Web",
-        "Frontend"
-      ],
+      "period": "Ιουλ 2024 - Δεκ 2024",
+      "tags": ["Web", "Frontend"],
       "bullets": []
     },
     {
       "role": "Web Developer",
       "company": "Greek Yellow Pages",
-      "period": "Μάι 2023 — Ιουλ 2024",
-      "tags": [
-        "Frontend",
-        "CMS"
-      ],
+      "period": "Μαι 2023 - Ιουλ 2024",
+      "tags": ["Frontend", "CMS"],
       "bullets": []
     },
     {
       "role": "Implementation Coordinator",
       "company": "Greek Yellow Pages",
-      "period": "Ιουν 2019 — Μάι 2023",
-      "tags": [
-        "Υλοποίηση",
-        "Συντονισμός"
-      ],
+      "period": "Ιουν 2019 - Μαι 2023",
+      "tags": ["Implementation", "Coordination"],
       "bullets": []
     },
     {
       "role": "Multimedia Developer",
       "company": "Express Publishing",
-      "period": "Μάι 2016 — Ιουν 2019",
-      "tags": [
-        "Multimedia",
-        "Digital"
-      ],
+      "period": "Μαι 2016 - Ιουν 2019",
+      "tags": ["Multimedia", "Digital"],
       "bullets": []
     },
     {
       "role": "Web Designer",
       "company": "ASTBooks",
-      "period": "Οκτ 2013 — Απρ 2016",
-      "tags": [
-        "Design",
-        "Web"
-      ],
+      "period": "Οκτ 2013 - Απρ 2016",
+      "tags": ["Design", "Web"],
       "bullets": [
-        "Δημιουργία και σχεδιασμός εταιρικών websites (και e-shop).",
-        "Διόρθωση & σελιδοποίηση έντυπου υλικού και ebooks.",
+        "Δημιουργία και σχεδιασμός εταιρικών websites, συμπεριλαμβανομένων e-shop.",
+        "Διόρθωση και σελιδοποίηση έντυπου υλικού και ebooks.",
         "Δημιουργία brochures και διαχείριση social media."
       ]
     },
     {
       "role": "Broadcast Designer",
       "company": "TV Mytilini",
-      "period": "Ιουλ 2008 — Αύγ 2008",
-      "tags": [
-        "Training"
-      ],
+      "period": "Ιουλ 2008 - Αυγ 2008",
+      "tags": ["Training"],
       "bullets": [
-        "Graduate training: video cutting, προετοιμασία προγραμμάτων, έλεγχος live εκπομπών."
+        "Πρακτική σε video editing, προετοιμασία τηλεοπτικών προγραμμάτων και έλεγχο live εκπομπών."
       ]
     }
   ],
   "projects": [
     {
       "name": "Interactive CV",
-      "desc": "Creative/modern CV με drag & drop sections, δίγλωσσο περιεχόμενο και PDF export.",
-      "tags": [
-        "React",
-        "Tailwind",
-        "Framer Motion"
-      ]
+      "desc": "Creative modern CV με drag and drop sections, δίγλωσσο περιεχόμενο και PDF export.",
+      "tags": ["React", "Tailwind", "Framer Motion"]
     },
     {
       "name": "Intranet Workflows",
-      "desc": "Εσωτερικά εργαλεία με φόρμες, εγκρίσεις και dashboards (WordPress).",
-      "tags": [
-        "WordPress",
-        "Automation"
-      ]
+      "desc": "Εσωτερικά εργαλεία με φόρμες, εγκρίσεις και dashboards στο WordPress ecosystem.",
+      "tags": ["WordPress", "Automation"]
     }
   ],
   "actions": {
