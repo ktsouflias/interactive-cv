@@ -62,6 +62,13 @@ export default function App(){
   );
 
   const printRef = useRef(null);
+  const contentTopPadding = showPalette
+    ? editMode
+      ? "pt-80"
+      : "pt-64"
+    : editMode
+      ? "pt-52"
+      : "pt-28";
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme === "dark" ? "dark" : "light";
@@ -183,7 +190,7 @@ export default function App(){
         </div>
       </div>
 
-      <div className={`mx-auto max-w-6xl px-4 pb-6 ${showPalette ? "pt-64" : "pt-28"}`}>
+      <div className={`mx-auto max-w-6xl px-4 pb-6 ${contentTopPadding}`}>
         <CvContent
           templateClass={templateClass}
           hero={hero}
