@@ -152,7 +152,8 @@ export default function App(){
   ];
 
   const onPdf = async () => {
-    await downloadPdfFromElement(printRef.current, "Konstantinos-Tsouflias-CV.pdf", {
+    const pdfFilename = `${toFileSafeName(hero.name || "CV")}-CV.pdf`;
+    await downloadPdfFromElement(printRef.current, pdfFilename, {
       preferSinglePage: true,
     });
   };
@@ -403,4 +404,13 @@ function normalizeSectionVisibility(value) {
 
 function normalizePdfTemplate(value) {
   return PDF_TEMPLATES.includes(value) ? value : "modern";
+}
+
+function toFileSafeName(value) {
+  return String(value)
+    .trim()
+    .replace(/[<>:"/\\|?*\u0000-\u001F]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "") || "CV";
 }
